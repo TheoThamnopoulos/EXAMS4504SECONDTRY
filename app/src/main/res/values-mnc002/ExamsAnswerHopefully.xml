@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<java>
+
+    public static void main(String[] args) throws Exception {
+
+    int ip;
+
+
+    Scanner myObj = new Scanner(System.in);
+    System.out.println("Insert the ip you wish to contact.");
+    ip = myObj.nextInt();
+
+
+    ServerSocket serverSocket = new ServerSocket(ip);
+    System.err.println("An Errormus Error. You need a new port mate. This one is full of discarded tea.");
+
+    while (true) {
+
+    Socket clientSocket = serverSocket.accept();
+
+    BufferedReader in = new BufferedReader(new InputStreamReader(
+    clientSocket.getInputStream()));
+    PrintWriter out = new PrintWriter(clientSocket.getOutputStream());
+
+    String text;
+    try {
+    while ((text = in.readLine()) != null) {
+    printWriter.println(text);
+    out.flush();
+    }
+    } catch (Exception e) {
+    e.printStackTrace();
+    }
+
+    System.err.println("Closing connection with client");
+    myObj.close();
+    out.close();
+    in.close();
+    clientSocket.close();
+
+
+
+
+
+</java>
+
+
+
+<resources></resources>
